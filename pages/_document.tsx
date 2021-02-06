@@ -32,6 +32,15 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <title>Floss Models</title>
+          <meta name="theme-color" content="#f38cf7" />
+          <meta name="twitter:card" content="summary" />
+          <meta name="twitter:title" content="Floss Models" />
+          <meta name="twitter:description" content="UK-based Talent Agency" />
+          <meta name="og:image" content="https://flossmodels.vercel.app/img/logo.png" />
+          <meta name="twitter:image" content="https://flossmodels.vercel.app/img/logo.png" />
+          <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+          <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
           <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
         </Head>
         <body>

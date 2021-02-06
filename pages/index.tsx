@@ -83,7 +83,7 @@ const Flex = styled.div`
 const Bg = styled.div`
   width: 100%;
   height: 100%;
-  background: url('/img/bg2.jpg');
+  background: url('/img/bg.jpg');
   background-position: center;
   background-size: cover;
 `
