@@ -44,9 +44,10 @@ const Navbar = () => {
                         </IconButton>     
                     ) : (
                         <NavLinks>
-                            <Link href="/model"><NavLink>Become a Model</NavLink></Link>
-                            <Link href="/model"><NavLink>Meet Our Team</NavLink></Link>
-                            <Link href="/model"><NavLink>Get Started</NavLink></Link>
+                            <Link href="/benefits"><NavLink>The Benefits</NavLink></Link>
+                            <Link href="/how-it-works"><NavLink>How It Works</NavLink></Link>
+                            <Link href="/team"><NavLink>Meet Our Team</NavLink></Link>
+                            <Link href="/contact"><NavLink>Get Started</NavLink></Link>
                         </NavLinks>
                     )}
                 </Flex>
@@ -93,7 +94,7 @@ const NavLinks = styled.div`
 
 const NavLink = styled.div`
     cursor: pointer;
-    margin-left: 15px;
+    margin-left: 20px;
     border-bottom: 1px solid rgba(0,0,0,0);
     transition: ease-in-out 0.2s;
     &:hover {

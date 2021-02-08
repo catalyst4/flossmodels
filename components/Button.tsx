@@ -5,7 +5,7 @@ const Button = styled.button`
     outline: none;
     font-weight: 600;
     text-transform: uppercase;
-    padding: ${props => props.padding ? props.padding : '8px 20px'};
+    padding: ${props => props.padding ? props.padding : '8px 15px'};
     font-size: ${props => props.fontSize ? props.fontSize : ''};
     background: ${props => props.outlined ? 'none' : props.bg ? props.bg : 'black'};
     border: ${props => props.border ? props.border : '2px solid'};
