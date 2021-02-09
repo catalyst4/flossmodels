@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import React from 'react'
 import styled from 'styled-components'
 import Container from '../components/Container'
@@ -5,6 +6,10 @@ import Navbar from '../components/Navbar'
 
 const benefits = () => {
     return (
+        <>
+        <Head>
+            <title>Floss Models | Benefits</title>
+        </Head>
         <Bg>
             <Navbar />
             <Container>
@@ -53,6 +58,7 @@ const benefits = () => {
                 </Content>
             </BlurBg>
         </Bg>
+        </>
     )
 }
 

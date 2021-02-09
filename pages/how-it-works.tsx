@@ -6,6 +6,7 @@ import Button from '../components/Button'
 import steps from '../steps'
 import Head from 'next/head'
 import Link from 'next/link'
+import FlexBetween from '../components/FlexBetween'
 
 const howItWorks = () => {
 
@@ -44,9 +45,20 @@ const howItWorks = () => {
                 {steps.filter(step => step.id === currentStep).map((step, i) => (
                     <div key={i}>
                         <Step>{step.id + '. ' + step.name}</Step>
-                        {step.paras.map((para, i) => (
-                            <Para key={i}>{para}</Para> 
-                        ))}
+                        {step.paras.map((para, i) => {
+                            if(i === 0) {
+                                return (
+                                    <FlexBetween style={{marginBottom: '15px'}}>
+                                        <Para key={i}>{para}</Para> 
+                                        <Gif src={`/img/gif/${step.gif}`} />
+                                    </FlexBetween>
+                                )
+                            } else {
+                                return (
+                                    <Para key={i}>{para}</Para> 
+                                )
+                            }
+                        })}
                     </div>    
                 ))}
                  
@@ -114,15 +126,20 @@ const Content = styled.div`
 `
 
 const Step = styled.h3`
-    font-size: 24px;
-    margin-bottom: 15px;
+    font-size: 32px;
+    margin: 15px 0;
 `
 
 const Para = styled.p`
+    width: 65%;
     margin: 15px 0;
     &:first-child() {
         margin: 0 0 15px 0;
     }
+`
+
+const Gif = styled.img`
+    width: 30%;
 `
 
 const FlexEnd = styled.div`
