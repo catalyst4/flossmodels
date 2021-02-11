@@ -31,12 +31,10 @@ const howItWorks = () => {
         </Head>
         <Bg>
            <Navbar />
-           <Container>
-            <Title>How It Works</Title>
-           </Container>
            <BlurBg>
             <Content>
              <Container style={{width: '90%'}}>
+                <Title>How It Works</Title>
                 <Progress>
                     {steps.map((step,i) => (
                         <Bar active={currentStep >= i + 1} key={i} />
@@ -48,8 +46,8 @@ const howItWorks = () => {
                         {step.paras.map((para, i) => {
                             if(i === 0) {
                                 return (
-                                    <FlexBetween style={{marginBottom: '15px'}}>
-                                        <Para key={i}>{para}</Para> 
+                                    <FlexBetween key={i} style={{marginBottom: '15px'}}>
+                                        <Para>{para}</Para> 
                                         <Gif src={`/img/gif/${step.gif}`} />
                                     </FlexBetween>
                                 )
@@ -100,13 +98,13 @@ const Bg = styled.div`
 
 const Title = styled.h1`
     margin: 15px 0;
-    color: white;
+    color: black;
 `
 
 const BlurBg = styled.div`
     width: 100%;
     height: calc(100% - 78px - 78px);
-    margin: auto;
+    margin: 30px auto;
     background: rgba(255, 255, 255,0.35);
     backdrop-filter: blur(5px);
     padding: 15px;
@@ -126,7 +124,8 @@ const Content = styled.div`
 `
 
 const Step = styled.h3`
-    font-size: 32px;
+    font-size: 24px;
+    font-weight: 500;
     margin: 15px 0;
 `
 
@@ -146,6 +145,7 @@ const FlexEnd = styled.div`
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    margin-bottom: 15px;
 `
 
 const Progress = styled.div`

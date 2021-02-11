@@ -15,6 +15,7 @@ const Button = styled.button`
     font-family: 'Poppins', sans-serif;
     margin-left: 10px;
     transition: ease-in-out 0.1s;
+    opacity: ${props => props.disabled ? '0.1' : ''};
     &:first-child {
         margin-left: 0;
     }

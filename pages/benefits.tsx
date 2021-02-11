@@ -12,12 +12,10 @@ const benefits = () => {
         </Head>
         <Bg>
             <Navbar />
-            <Container>
-                <Title>The Benefits</Title>
-            </Container>
             <BlurBg>
                 <Content>
                     <Container style={{width: '90%'}}>
+                        <Title>The Benefits</Title>
                         <Para>Floss Models can provide you with a unique opportunity to expand your social media following. This comes in the form of growth on both Instagram and OnlyFans.</Para>
                         <Benefit>
                             <Icon className="fas fa-check"></Icon>
@@ -79,12 +77,12 @@ const Bg = styled.div`
 
 const Title = styled.h1`
     margin: 15px 0;
-    color: white;
+    color: black;
 `
 
 const BlurBg = styled.div`
     width: 100%;
-    margin: auto;
+    margin: 30px auto;
     background: rgba(255, 255, 255,0.35);
     backdrop-filter: blur(5px);
     padding: 15px;
