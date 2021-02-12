@@ -76,13 +76,13 @@ const Bg = styled.div`
 `
 
 const Title = styled.h1`
-    margin: 15px 0;
+    margin-bottom: 15px;
     color: black;
 `
 
 const BlurBg = styled.div`
     width: 100%;
-    margin: 30px auto;
+    margin: auto;
     background: rgba(255, 255, 255,0.35);
     backdrop-filter: blur(5px);
     padding: 15px;

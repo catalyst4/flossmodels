@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar'
 import TextField from '../components/TextField'
 import Head from 'next/head'
 import Button from '../components/Button'
+import axios from 'axios'
 
 const contact = () => {
 
@@ -38,6 +39,37 @@ const contact = () => {
         }
     }
 
+    const submitHandler = () => {
+        if(submit === true) {
+            return
+        } else {
+            if(error === false) {
+                sendEmail(name, email, option, message)
+            } else {
+                if(!name) {
+                    setName('')
+                }
+                if(!email) {
+                    setEmail('')
+                }
+                if(!option) {
+                    setOption('')
+                }
+                if(!message) {
+                    setMessage('')
+                }
+            }    
+        }
+    }
+
+    const sendEmail = async (name, email, option, message) => {
+
+        const { data } = await axios.post('/api/email', { name, email, option, message })
+        setSuccess(data.success)
+        setSubmit(true)
+
+    }
+
     return (
         <>
         <Head>
@@ -50,37 +82,48 @@ const contact = () => {
                     <Container style={{width: '90%'}}>
                         <Title>Contact Us</Title>
                         <Para>Whether you are a model, advertiser or alien get in touch with us today! We will happily answer any questions or queries that you may be thinking about.</Para>
-                        <TextField 
-                            value={name}
-                            placeholder="Name"
-                            onChange={(e) => setName(e.target.value)}
-                            error={name === '' ? true : false}
-                            valid={name && name.length > 0 ? true : false}
-                        />
-                        <TextField 
-                            value={email}
-                            placeholder="Email"
-                            onChange={e => setEmail(e.target.value)}
-                            error={email === '' || email !== undefined && validEmail === false ? true : false}
-                            helperText={email === '' ? 'Enter a email' : ''}
-                            valid={validEmail}
-                        />
-                        <Select>
-                            {options.map((opt, i) => (
-                                <Option active={option === opt ? true : false} key={i} onClick={() => setOption(opt)}>{opt}</Option>   
-                            ))}
-                        </Select>
-                        <Message 
-                            rows="4" 
-                            value={message} 
-                            placeholder="Your message" 
-                            onChange={e => setMessage(e.target.value)}
-                            error={message === '' ? true : false}
-                            valid={message && message.length > 0 ? true : false}
-                        />
-                        <FlexEnd>
-                            <Button outlined color="black" disabled={error === true ? true : false}>Submit</Button>
-                        </FlexEnd>
+                        {success ? (
+                            <Success>
+                                <Flex>
+                                    <div>Your message has been sent</div>    
+                                    <Icon className="far fa-paper-plane" />
+                                </Flex>
+                            </Success>
+                        ) : (
+                        <>
+                            <TextField 
+                                value={name}
+                                placeholder="Name"
+                                onChange={(e) => setName(e.target.value)}
+                                error={name === '' ? true : false}
+                                valid={name && name.length > 0 ? true : false}
+                            />
+                            <TextField 
+                                value={email}
+                                placeholder="Email"
+                                onChange={e => setEmail(e.target.value)}
+                                error={email === '' || email !== undefined && validEmail === false ? true : false}
+                                helperText={email === '' ? 'Enter a email' : ''}
+                                valid={validEmail}
+                            />
+                            <Select>
+                                {options.map((opt, i) => (
+                                    <Option active={option === opt ? true : false} key={i} onClick={() => setOption(opt)}>{opt}</Option>   
+                                ))}
+                            </Select>
+                            <Message 
+                                rows="4" 
+                                value={message} 
+                                placeholder="Your message" 
+                                onChange={e => setMessage(e.target.value)}
+                                error={message === '' ? true : false}
+                                valid={message && message.length > 0 ? true : false}
+                            />
+                            <FlexEnd>
+                                <Button onClick={submitHandler} outlined color="black" disabled={error === true ? true : false}>Submit</Button>
+                            </FlexEnd>
+                        </>
+                        )}
                     </Container>
                 </Content>
             </BlurBg>
@@ -150,6 +193,7 @@ const Message = styled.textarea`
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
     outline: none;
+    resize: vertical;
     box-shadow: ${props => props.error ? '0 0 3px 3px rgba(255, 0, 0,0.2)' : props.valid ? '0 0 3px 3px rgba(255, 0, 242,0.1)' : ''};
 `
 
@@ -157,4 +201,25 @@ const FlexEnd = styled.div`
     display: flex;
     justify-content: flex-end;
     margin-top: 10px;
+`
+
+const Success = styled.div`
+    width: 100%;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    font-weight: 500;
+`
+
+const Flex = styled.div`
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+`
+
+const Icon = styled.i`
+    margin-left: 10px;
 `

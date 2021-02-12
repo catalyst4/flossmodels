@@ -16,13 +16,14 @@ const Button = styled.button`
     margin-left: 10px;
     transition: ease-in-out 0.1s;
     opacity: ${props => props.disabled ? '0.1' : ''};
+    cursor: ${props => props.disabled ? 'not-allowed' : ''};
     &:first-child {
         margin-left: 0;
     }
     &:hover {
-        background: ${props => props.hoverBg ? props.hoverBg : 'black'};
-        color: ${props => props.hoverColor ? props.hoverColor : 'white'};
-        border-color: ${props => props.hoverBg ? props.hoverBg : 'black'};
+        background: ${props => props.disabled ? '' : props.hoverBg ? props.hoverBg : 'black'};
+        color: ${props => props.disabled ? '' : props.hoverColor ? props.hoverColor : 'white'};
+        border-color: ${props => props.disabled ? '' : props.hoverBg ? props.hoverBg : 'black'};
     }
 `
 

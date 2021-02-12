@@ -1,48 +1,51 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import FlexCenter from './FlexCenter'
+import SwiperCore, { Autoplay } from 'swiper'
+import { Swiper, SwiperSlide } from 'swiper/react'
 
 const slides = [
     {
         id: 1,
-        title: 'Take your following to the next level'
+        title: 'Boost your income, kickstart your influencing career!'
     },
-    // {
-    //     id: 2,
-    //     title: '2'
-    // },
-    // {
-    //     id: 3,
-    //     title: '3'
-    // },
+    {
+        id: 2,
+        title: 'Grow your socials, take your following to the next level!'
+    },
+    {
+        id: 3,
+        title: 'Becoming part of a professional, laidback, and ever improving team.'
+    },
 ]
 
-const Carousel = () => {
+const SCarousel = () => {
 
     const [id, setId] = useState(slides[0].id)
     const length = slides.length
 
+    SwiperCore.use([Autoplay]);
+
     return (
         <Bg>
-            <Swiper>
-                {slides.map((slide,i) => (
-                    <Slide key={slide.id}>
-                        <Title>{slide.title}</Title>
-                    </Slide>    
+            <Swiper
+                spaceBetween={10}
+                slidesPerView={1}
+                onSlideChange={() => console.log('slide change')}
+                onSwiper={(swiper) => console.log(swiper)}
+                autoplay={{ delay: 6500 }}
+            >
+                {slides.map((slide, i) => (
+                    <SwiperSlide key={i}>
+                     <Title>{slide.title}</Title>
+                    </SwiperSlide>    
                 ))}
-            </Swiper>
-            <FlexCenter style={{height: 'initial'}}>
-                <SwiperControls>
-                    <SwiperBtn active/>
-                    <SwiperBtn />
-                    <SwiperBtn />    
-                </SwiperControls>
-            </FlexCenter>
+            </Swiper>    
         </Bg>
     )
 }
 
-export default Carousel
+export default SCarousel
 
 const Bg = styled.div`
     width: 100%;
@@ -56,34 +59,12 @@ const Bg = styled.div`
     }
 `
 
-const Swiper = styled.div`
-    margin-top: 18px;
-`
-
-const SwiperControls = styled.div`
-    display: flex;
-    align-items: center;
-`
-
-const SwiperBtn = styled.div`
-    width: 8px;
-    height: 8px;
-    border-radius: 999px;
-    background: ${props => props.active ? 'white' : ''};
-    border: 2px solid white;
-    margin-right: 5px;
-    cursor: pointer;
-`
-
-const Slide = styled.div`
-`
-
 const Title = styled.h1`
-    line-height: 30px;
-    margin-bottom: 10px;
+    font-size: 24px;
+    line-height: 25px;
     color: white;
     @media (min-width: 1024px) {
-        font-size: 48px;
-        line-height: 45px;
+        font-size: 28px;
+        line-height: 30px;
     }
 `

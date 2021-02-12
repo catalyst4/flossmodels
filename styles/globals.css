@@ -23,3 +23,20 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.swiper-container {
+  width: 100%!important;
+  height: 100%;
+  margin: 0!important;
+}
+
+.swiper-wrapper {
+  width: 100%!important;
+}
+
+.swiper-slide {
+  width: 100%!important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -113,7 +113,7 @@ const TopFlex = styled.div`
 const FlexCards = styled.div`
   display: grid;
   width: 100%;
-  height: calc(100% - 78px - 126px);
+  height: calc(100% - 78px - 105px);
   padding: 10px;
   gap: 10px;
   background: rgba(255, 255, 255,0.35);

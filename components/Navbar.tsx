@@ -5,6 +5,8 @@ import CloseIcon from '@material-ui/icons/Close'
 import MenuIcon from '@material-ui/icons/Menu'
 import useWindowSize from '../hooks/useWindowSize'
 import Link from 'next/link'
+import Menu from '@material-ui/core/Menu'
+import MenuItem from '@material-ui/core/MenuItem'
 
 const Navbar = () => {
 
@@ -29,6 +31,7 @@ const Navbar = () => {
     }
 
     return (
+        <>
         <Bg>
             <Container>
                 <Flex>
@@ -53,6 +56,28 @@ const Navbar = () => {
                 </Flex>
             </Container>
         </Bg>
+        <Menu
+            id="simple-menu"
+            anchorEl={anchorEl}
+            keepMounted
+            open={Boolean(anchorEl)}
+            onClose={handleClose}
+            style={{marginTop: '78px'}}
+        >
+            <SMenuItem onClick={handleClose}>
+                <Link href="/benefits"><a>The Benefits</a></Link>
+            </SMenuItem>
+            <SMenuItem onClick={handleClose}>
+                <Link href="/how-it-works"><a>How It Works</a></Link>
+            </SMenuItem>
+            <SMenuItem onClick={handleClose}>
+                <Link href="/team"><a>Meet Our Team</a></Link>
+            </SMenuItem>
+            <SMenuItem onClick={handleClose}>
+                <Link href="/contact"><a>Get Started</a></Link>
+            </SMenuItem>
+        </Menu>
+        </>
     )
 }
 
@@ -103,4 +128,8 @@ const NavLink = styled.div`
     &:first-child {
         margin-left: 0;
     }
+`
+
+const SMenuItem = styled(MenuItem)`
+    font-family: 'Poppins', sans-serif!important;
 `
