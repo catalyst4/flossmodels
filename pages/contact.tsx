@@ -120,7 +120,7 @@ const contact = () => {
                                 valid={message && message.length > 0 ? true : false}
                             />
                             <FlexEnd>
-                                <Button onClick={submitHandler} outlined color="black" disabled={error === true ? true : false}>Submit</Button>
+                                <Button onClick={submitHandler} outlined color="black" borderColor="black" disabled={error === true ? true : false}>Submit</Button>
                             </FlexEnd>
                         </>
                         )}
@@ -136,22 +136,30 @@ export default contact
 
 const Bg = styled.div`
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     background: url('/img/bg.jpg');
+    background-repeat: repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
 `
 
 const Title = styled.h1`
     margin: 15px 0;
     color: black;
+    @media (max-width: 768px) {
+        margin: 0 0 15px 0;
+    }
 `
 
 const BlurBg = styled.div`
     width: 100%;
-    margin: 30px auto;
+    margin: 0 auto;
     background: rgba(255, 255, 255,0.35);
     backdrop-filter: blur(5px);
     padding: 15px;
     @media (min-width: 1024px) {
+        margin: 30px auto;
         width: 70%;
     }
 `

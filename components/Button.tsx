@@ -9,7 +9,7 @@ const Button = styled.button`
     font-size: ${props => props.fontSize ? props.fontSize : ''};
     background: ${props => props.outlined ? 'none' : props.bg ? props.bg : 'black'};
     border: ${props => props.border ? props.border : '2px solid'};
-    border-color: ${props => props.color ? props.color : 'white'};
+    border-color: ${props => props.borderColor ? props.borderColor : 'white'};
     border-radius: ${props => props.radius ? props.radius : '50px'};
     color: ${props => props.color ? props.color : 'white'};
     font-family: 'Poppins', sans-serif;

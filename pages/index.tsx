@@ -50,10 +50,10 @@ export default function Home() {
                   <FlexCenter>
                     <div>
                       <Link href="/benefits">
-                        <Button outlined color="black" hoverBg="black" hoverColor="white">The Benefits</Button>  
+                        <Button outlined color="black" borderColor="black" hoverBg="black" hoverColor="white">The Benefits</Button>  
                       </Link>
                       <Link href="/how-it-works">
-                        <Button outlined color="black" hoverBg="black" hoverColor="white">How It Works</Button>  
+                        <Button outlined color="black" borderColor="black" hoverBg="black" hoverColor="white">How It Works</Button>  
                       </Link>
                     </div>
                   </FlexCenter>  
@@ -68,7 +68,7 @@ export default function Home() {
                   <Desc>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus, omnis.</Desc>
                   <FlexCenter>
                     <div>
-                      <Button outlined color="black" hoverBg="black" hoverColor="white">Discover Us</Button>
+                      <Button outlined color="black" borderColor="black" hoverBg="black" hoverColor="white">Discover Us</Button>
                     </div>
                   </FlexCenter> 
                 </div>

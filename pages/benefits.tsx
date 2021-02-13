@@ -64,15 +64,12 @@ export default benefits
 
 const Bg = styled.div`
     width: 100%;
+    min-height: 100%;
     background: url('/img/bg.jpg');
-    background-repeat: no-repeat;
-    background-position: center center;
+    background-repeat: repeat;
+    background-position: center;
     background-size: cover;
     background-attachment: fixed;
-    background-attachment: fixed;
-    @media (min-width: 1024px) {
-        height: 100%;
-    }
 `
 
 const Title = styled.h1`
@@ -87,6 +84,7 @@ const BlurBg = styled.div`
     backdrop-filter: blur(5px);
     padding: 15px;
     @media (min-width: 1024px) {
+        margin: 30px auto;
         width: 70%;
     }
 `

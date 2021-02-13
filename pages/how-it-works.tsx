@@ -65,10 +65,10 @@ const howItWorks = () => {
                         <Button outlined color="black" radius="10px" onClick={() => clickHandler('back')}>Back</Button>    
                     )}
                     {currentStep < length ? (
-                        <Button radius="10px" onClick={() => clickHandler('next')}>Next Step</Button>    
+                        <Button radius="10px" color="white" borderColor="black" onClick={() => clickHandler('next')}>Next Step</Button>    
                     ) : currentStep === length ? (
                         <Link href="/contact">
-                            <Button radius="10px">Contact Us</Button>  
+                            <Button radius="10px" color="white" borderColor="black">Contact Us</Button>  
                         </Link>
                     ) : ''}
                 </FlexEnd>
@@ -84,7 +84,7 @@ export default howItWorks
 
 const Bg = styled.div`
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     background: url('/img/bg.jpg');
     background-repeat: no-repeat;
     background-position: center center;
@@ -99,16 +99,19 @@ const Bg = styled.div`
 const Title = styled.h1`
     margin: 15px 0;
     color: black;
+    @media (max-width: 768px) {
+        margin: 0 0 15px 0;
+    }
 `
 
 const BlurBg = styled.div`
     width: 100%;
-    height: calc(100% - 78px - 78px);
-    margin: 30px auto;
+    margin: 0 auto;
     background: rgba(255, 255, 255,0.35);
     backdrop-filter: blur(5px);
     padding: 15px;
     @media (min-width: 1024px) {
+        margin: 30px auto;
         width: 70%;
         height: initial;
     }
@@ -135,10 +138,16 @@ const Para = styled.p`
     &:first-child() {
         margin: 0 0 15px 0;
     }
+    @media (max-width: 768px) {
+        width: 100%;
+    }
 `
 
 const Gif = styled.img`
     width: 30%;
+    @media (max-width: 768px) {
+        width: 100%;
+    }
 `
 
 const FlexEnd = styled.div`
