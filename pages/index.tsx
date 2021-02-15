@@ -46,7 +46,7 @@ export default function Home() {
                 <div>
                   <Icon className="fas fa-camera"></Icon>
                   <Title>Become a Model</Title>
-                  <Desc>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus, omnis.</Desc>
+                  <Desc>What are you waiting for? Start your influencing career today! Click the buttons below for more in-depth information.</Desc>
                   <FlexCenter>
                     <div>
                       <Link href="/benefits">
@@ -65,10 +65,12 @@ export default function Home() {
                 <div>
                   <Icon className="fas fa-users"></Icon>
                   <Title>Meet Our Team</Title>
-                  <Desc>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus, omnis.</Desc>
+                  <Desc>Instead of it all just being blank screens, lets meet the team that make up Floss!</Desc>
                   <FlexCenter>
                     <div>
-                      <Button fontSize="12px" outlined color="black" borderColor="black" hoverBg="black" hoverColor="white">Discover Us</Button>
+                      <Link href="/team">
+                        <Button fontSize="12px" outlined color="black" borderColor="black" hoverBg="black" hoverColor="white">Discover Us</Button>  
+                      </Link>
                     </div>
                   </FlexCenter> 
                 </div>
@@ -129,8 +131,8 @@ const FlexCards = styled.div`
 const Card = styled.div`
   width: 100%;
   height: 100%;
-  background: ${props => props.model ? 'white' : 'white'};
-  color: black;
+  background: ${props => props.theme.colors.background};
+  color: ${props => props.theme.colors.color};
   padding: 10px;
 `
 
@@ -148,9 +150,12 @@ const Title = styled.h1`
 `
 
 const Desc = styled.p`
+  width: 70%;
+  margin: auto;
   text-align: center;
   margin-bottom: 10px;
   @media (max-width: 768px) {
+    width: 100%;
     font-size: 14px;
   }
 `

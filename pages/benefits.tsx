@@ -74,7 +74,7 @@ const Bg = styled.div`
 
 const Title = styled.h1`
     margin-bottom: 15px;
-    color: black;
+    color: ${props => props.theme.colors.color};
 `
 
 const BlurBg = styled.div`
@@ -91,7 +91,8 @@ const BlurBg = styled.div`
 
 const Content = styled.div`
     padding: 20px 0;
-    background: white;
+    background: ${props => props.theme.colors.background};
+    color: ${props => props.theme.colors.color};
 `
 
 const Para = styled.p`

@@ -98,7 +98,7 @@ const Bg = styled.div`
 
 const Title = styled.h1`
     margin: 15px 0;
-    color: black;
+    color: ${props => props.theme.colors.color};
     @media (max-width: 768px) {
         margin: 0 0 15px 0;
     }
@@ -120,7 +120,8 @@ const BlurBg = styled.div`
 const Content = styled.div`
     height: 100%;
     padding: 20px 0;
-    background: white;
+    background: ${props => props.theme.colors.background};
+    color: ${props => props.theme.colors.color};
     @media (min-width: 1024px) {
         height: initial;
     }    
@@ -168,7 +169,6 @@ const Bar = styled.div`
     width: 100%;
     background: ${props => props.active ? '#ff00f2' : 'grey'};
     height: 10px;
-    opacity: 0.5;
-    border: 2px solid white;
+    border: 2px solid ${props => props.theme.colors.background};
     border-radius: 999px;
 `

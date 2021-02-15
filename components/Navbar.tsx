@@ -85,7 +85,8 @@ export default Navbar
 
 const Bg = styled.div`
     width: 100%;
-    background: rgba(255, 255, 255);
+    background: ${props => props.theme.colors.background};
+    color: ${props => props.theme.colors.color};
     padding: 15px;
     @media (min-width: 1024px) {
         padding: 25px;
