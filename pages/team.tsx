@@ -17,6 +17,7 @@ const team = () => {
     return (
         <>
             <Head>
+                <title>Floss Models | Meet Our Team</title>
             </Head>   
             <Bg>
                 <Navbar />
