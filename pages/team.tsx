@@ -108,8 +108,9 @@ const Flex = styled.div`
 const Img = styled.img`
     width: 100px;
     height: 100px;
-    background: #fa63e6;
+    background: white;
     border-radius: 99999999px;
+    border: 3px solid white;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     @media (max-width: 768px) {
         margin: ${props => props.reversed ? '0 0 0 15px' : '0 15px 0 0'};
