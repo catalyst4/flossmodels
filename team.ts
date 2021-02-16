@@ -1,12 +1,10 @@
 interface Team {
-    [index: number]: {
-        name: String,
-        img: String,
-        bio: String  
-    }
+    name: String,
+    img: String,
+    bio: String  
 }
 
-let team: Team = [
+let team: Team[] = [
     {
         name: 'Jack G',
         img: 'jack.jpg',
