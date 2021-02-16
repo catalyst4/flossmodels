@@ -23,7 +23,7 @@ export default function Home() {
           <meta name="theme-color" content="#f38cf7" />
           <meta name="twitter:card" content="summary" />
           <meta name="twitter:title" content="Floss Models" />
-          <meta name="twitter:description" content="UK-based Talent Agency" />
+          <meta name="twitter:description" content="UK-based Talent agency specialising in Instagram marketing and OnlyFans management" />
           <meta name="og:image" content="https://flossmodels.vercel.app/img/logo.png" />
           <meta name="twitter:image" content="https://flossmodels.vercel.app/img/logo.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
