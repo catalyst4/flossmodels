@@ -22,7 +22,7 @@ export default (req,res) => {
         let emailMsg = {
             to: 'contact@flossmodels.com',
             from: email,
-            subject: option,
+            subject: name + ': ' + option + ' Inquiry',
             text: name,
             html: message
         }
